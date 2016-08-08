@@ -1,0 +1,42 @@
+@import url("../fonts/css/font-awesome.min.css");
+
+/* <---- General Style ----> */
+body {
+    font-family: 'Roboto', Helvetica, sans-serif, Arial;
+    color: #555;
+    font-size: 15px;
+}
+
+/* Landing Page css  */
+
+.header-landing {
+	position: relative;
+    height: 700px;
+    margin-top: -70px;
+}
+
+.landing-nav {
+   height: 70px;
+}
+
+.logo {
+    display: inline-block;
+    padding-left: 25px;
+    color: #fff;
+}
+
+.welcome-header-landing {
+    text-align: center;
+    color: #fff;
+    margin-top: 250px;
+}
+
+
+
+.paging-button {
+  visibility: hidden;
+}
+
+.button-container {
+  clear: both;
+}

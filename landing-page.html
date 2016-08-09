@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="assets/img/favicon.ico">
         <!-- CSS -->
         <!-- Google Font -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:300&subset=greek-ext,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300&subset=greek" rel="stylesheet">  
         <!-- Bootstrap Core CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Custom Theme CSS -->
@@ -25,20 +25,89 @@
     </head>
 
 <body>
-
-  
-    <div >
-        <ul id="results">
-            
-        </ul>
+    <nav class="navbar navbar-main navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Greek Youtube Fun</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Βοήθεια <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="#">Επικοινωνία <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid content-wrapper">
+        <div class="row">      
+            <div class="col-md-12">
+                <div class="top-video-onwers">
+                    <h2 class="channel-owner">Crazy Tsach</h2>
+                </div>    
+                <!--  Start Video Object  -->
+                <div class="col-md-3 video-clip">
+                    <div class="video">
+                        <img src="http://fc01.deviantart.net/fs71/i/2014/172/b/5/temperate_glass_by_dmmdesign-d7nf32n.png"/>
+                    </div>
+                    <div class="play-overlay"></div>
+                    <div class="video-content">
+                        <div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>Posted July 12, 2014</span></div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consectetur eum, rem, magnam nam, cum, officia vel sequi dolores dolore error alias!</div>
+                    </div>
+                </div>
+                <!--  End of Video Object  -->
+                <!--  Start Video Object  -->
+                <div class="col-md-3 video-clip">
+                    <div class="video">
+                        <img src="http://fc01.deviantart.net/fs71/i/2014/172/b/5/temperate_glass_by_dmmdesign-d7nf32n.png"/>
+                    </div>
+                    <div class="play-overlay"></div>
+                    <div class="video-content">
+                        <div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>Posted July 12, 2014</span></div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consectetur eum, rem, magnam nam, cum, officia vel sequi dolores dolore error alias!</div>
+                    </div>
+                </div>
+                <!--  End of Video Object  -->
+               <!--  Start Video Object  -->
+                <div class="col-md-3 video-clip">
+                    <div class="video">
+                        <img src="http://fc01.deviantart.net/fs71/i/2014/172/b/5/temperate_glass_by_dmmdesign-d7nf32n.png"/>
+                    </div>
+                    <div class="play-overlay"></div>
+                    <div class="video-content">
+                        <div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>Posted July 12, 2014</span></div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consectetur eum, rem, magnam nam, cum, officia vel sequi dolores dolore error alias!</div>
+                    </div>
+                </div>
+                <!--  End of Video Object  -->
+                <!--  Start Video Object  -->
+                <div class="col-md-3 video-clip">
+                    <div class="video">
+                        <img src="http://fc01.deviantart.net/fs71/i/2014/172/b/5/temperate_glass_by_dmmdesign-d7nf32n.png"/>
+                    </div>
+                    <div class="play-overlay"></div>
+                    <div class="video-content">
+                        <div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>Posted July 12, 2014</span></div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consectetur eum, rem, magnam nam, cum, officia vel sequi dolores dolore error alias!</div>
+                    </div>
+                </div>
+                <!--  End of Video Object  -->
+            </div>
+        </div>
     </div>
     
    
     
     <!-- jQuery included -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/custom.js"></script>
-    <!-- all compiled plugins included-->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/youtube_api.js"></script>
+    <script src="js/landing.js"></script>
   </body>
 </html>

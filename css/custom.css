@@ -2,41 +2,150 @@
 
 /* <---- General Style ----> */
 body {
-    font-family: 'Roboto', Helvetica, sans-serif, Arial;
+    font-family: 'Roboto Slab', serif, Arial;
     color: #555;
     font-size: 15px;
 }
 
-/* Landing Page css  */
+/* Navigation bar  */
 
-.header-landing {
-	position: relative;
-    height: 700px;
-    margin-top: -70px;
+.navbar-brand {
+    line-height: 61px;
+    padding: 0 19px 0 19px;
 }
 
-.landing-nav {
-   height: 70px;
+.navbar-main {
+    height: 62px; 
+    background: #fff;
+    border-bottom: 1px solid #dce0e0;
+    z-index: 2;
+}
+.navbar-main a { 
+    color: #FF3300; 
 }
 
-.logo {
-    display: inline-block;
-    padding-left: 25px;
-    color: #fff;
+.navbar-main ul.navbar-nav a { 
+    height: 61px;
+    line-height: 61px;
+    border-left: 1px solid #dce0e0;
+    position: relative;
+    display: block;
+    padding: 0 19px 0 19px;
 }
 
-.welcome-header-landing {
-    text-align: center;
-    color: #fff;
-    margin-top: 250px;
+.navbar-main ul.navbar-nav a:hover,
+.navbar-main ul.navbar-nav a:visited,
+.navbar-main ul.navbar-nav a:focus,
+.navbar-main ul.navbar-nav a:active { 
+    background-color: #f8f6f6; 
+    border-color: #dce0e0;
 }
 
-
-
-.paging-button {
-  visibility: hidden;
+.navbar-main button.navbar-toggle { 
+    background: #f14444; 
+    border-radius: 2px; 
 }
 
-.button-container {
-  clear: both;
+.navbar-main button.navbar-toggle:hover { 
+    background: #999; 
+}
+
+.navbar-main button.navbar-toggle > span.icon-bar { 
+    background: #fff; 
+}
+
+.navbar-main ul.dropdown-menu { 
+    border: 0; 
+    background: #fff; 
+    border-radius: 4px; 
+    margin: 4px 0; 
+    box-shadow: 0 0 4px 0 #ccc; 
+}
+
+.navbar-main ul.dropdown-menu > li > a { 
+    color: #444; 
+}
+
+.navbar-main ul.dropdown-menu > li > a:hover { 
+    background: #f14444; 
+    color: #fff; 
+}
+
+/* Content with videos */
+
+.content-wrapper {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color: #F8F8F8;
+}
+
+.col-md-2 {
+    display: block;
+    position: relative;
+    margin: 0 10px 0 10px;
+}
+
+/* Video row */
+
+.top-video-onwers {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.channel-owner {
+    padding-bottom: 10px;
+    font-size: 26px; 
+    font-weight: 100;
+    color: #FF3300;
+    border-bottom: 1px solid #E3E3E3;
+}
+
+/* Video blocks */
+
+.video > img {
+    width: 100%;
+    height: 220px;
+}
+
+.video-content {
+    position: absolute;
+    top: 221px;
+    color: #eee;
+    display: block;
+    width: 91%;
+    height: 135px;
+    z-index: 200;
+    background: linear-gradient(180deg, #22313F, #34495E);
+}
+
+.time {
+    color: #bbb;
+    padding: 10px 0 0 10px;
+}
+
+.time-icon {
+    padding-right: 5px;
+}
+
+.post-date {
+    color: #BBB;
+    text-transform: uppercase;
+    padding-left: 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.description {
+    font-size: 12px;
+    padding: 5px 15px;
+    color: #eee;
+}
+
+@media(max-width: 767px) {
+
+  .video-clip:not(:first-child) {
+    margin-top: 155px;
+  }
+
 }

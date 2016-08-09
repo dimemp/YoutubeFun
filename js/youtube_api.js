@@ -1,4 +1,5 @@
 var channelName = 'CrazyTsach';
+var videoResults = 10;
 
 $(document).ready(function(){
 
@@ -23,7 +24,7 @@ $(document).ready(function(){
         $.get (
         "https://www.googleapis.com/youtube/v3/playlistItems", {
             part: 'snippet',
-            maxresults: 10,
+            maxresults: videoResults,
             playlistId: pid,
             key: 'AIzaSyCqHtArKSUrBpUnbdVMMKQYU5bsJVeptdc'
         },

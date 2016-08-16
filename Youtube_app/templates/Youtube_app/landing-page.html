@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
     <head>
-
+    	{% load staticfiles %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Τα πιο αστεία βίντεο!">
+        <meta name="description" content="Ξ¤Ξ± Ο€ΞΉΞΏ Ξ±ΟƒΟ„ΞµΞ―Ξ± Ξ²Ξ―Ξ½Ο„ΞµΞΏ!">
         <title>Youtube fun</title>  
 
-        <link rel="shortcut icon" href="assets/img/favicon.ico">
+        <link rel="shortcut icon" href="{% static 'assets/img/favicon.ico' %}">
         <!-- CSS -->
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300&subset=greek" rel="stylesheet">  
         <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+
         <!-- Custom Theme CSS -->
-        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}" />
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,13 +39,19 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Βοήθεια <span class="sr-only">(current)</span></a></li>
-                    <li class="active"><a href="#">Επικοινωνία <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="#">Ξ’ΞΏΞ®ΞΈΞµΞΉΞ± <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="#">Ξ•Ο€ΞΉΞΊΞΏΞΉΞ½Ο‰Ξ½Ξ―Ξ± <span class="sr-only">(current)</span></a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div id="results">
+    	
+    </div>
+
     <div class="container-fluid content-wrapper">
+
         <div class="row">      
             <div class="col-md-12">
                 <div class="top-video-onwers">
@@ -100,14 +107,71 @@
                 <!--  End of Video Object  -->
             </div>
         </div>
+
+        <div class="row">      
+            <div class="col-md-12">
+                <div class="top-video-onwers">
+                    <h2 class="channel-owner">Crazy Tsach</h2>
+                </div>    
+                <!--  Start Video Object  -->
+                <div class="col-md-3 video-clip">
+                    <div class="video">
+                        <img src="http://fc01.deviantart.net/fs71/i/2014/172/b/5/temperate_glass_by_dmmdesign-d7nf32n.png"/>
+                    </div>
+                    <div class="play-overlay"></div>
+                    <div class="video-content">
+                        <div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>Posted July 12, 2014</span></div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consectetur eum, rem, magnam nam, cum, officia vel sequi dolores dolore error alias!</div>
+                    </div>
+                </div>
+                <!--  End of Video Object  -->
+                <!--  Start Video Object  -->
+                <div class="col-md-3 video-clip">
+                    <div class="video">
+                        <img src="http://fc01.deviantart.net/fs71/i/2014/172/b/5/temperate_glass_by_dmmdesign-d7nf32n.png"/>
+                    </div>
+                    <div class="play-overlay"></div>
+                    <div class="video-content">
+                        <div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>Posted July 12, 2014</span></div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consectetur eum, rem, magnam nam, cum, officia vel sequi dolores dolore error alias!</div>
+                    </div>
+                </div>
+                <!--  End of Video Object  -->
+               <!--  Start Video Object  -->
+                <div class="col-md-3 video-clip">
+                    <div class="video">
+                        <img src="http://fc01.deviantart.net/fs71/i/2014/172/b/5/temperate_glass_by_dmmdesign-d7nf32n.png"/>
+                    </div>
+                    <div class="play-overlay"></div>
+                    <div class="video-content">
+                        <div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>Posted July 12, 2014</span></div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consectetur eum, rem, magnam nam, cum, officia vel sequi dolores dolore error alias!</div>
+                    </div>
+                </div>
+                <!--  End of Video Object  -->
+                <!--  Start Video Object  -->
+                <div class="col-md-3 video-clip">
+                    <div class="video">
+                        <img src="http://fc01.deviantart.net/fs71/i/2014/172/b/5/temperate_glass_by_dmmdesign-d7nf32n.png"/>
+                    </div>
+                    <div class="play-overlay"></div>
+                    <div class="video-content">
+                        <div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>Posted July 12, 2014</span></div>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consectetur eum, rem, magnam nam, cum, officia vel sequi dolores dolore error alias!</div>
+                    </div>
+                </div>
+                <!--  End of Video Object  -->
+            </div>
+        </div>
+
     </div>
     
    
     
     <!-- jQuery included -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/youtube_api.js"></script>
-    <script src="js/landing.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/youtube_api.js' %}"></script>
+    <script src="{% static 'js/landing.js' %}"></script>
   </body>
 </html>

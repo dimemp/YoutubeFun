@@ -182,6 +182,13 @@ body {
     color: #eee;
 }
 
+/* Footer */
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 @media(max-width: 767px) {
 
   .video-clip:not(:first-child) {

@@ -1,19 +1,31 @@
 var channelPosition = {
     'CrazyTsach': '#Crazy-Tsach-results',
     'VibratorProductions': '#Vibrator-Productions-results',
-    'AstathiosPranksMain': '#Astathios-Pranks-results',
-    'BooyahchannelGR': '#Booyah-Tv-results'
+    'AstathiosPranksMain': '#Astathios-Pranks-results'
 };
 
 var videoResults = 4;
-var latestVideo = '';
-var latestVideoDescription ='';
-var latestVideoId = '';            
+
+var latestVideoInfo = {
+    latestVideoDate: '',
+    latestVideoDescription: '',
+    latestVideoId: '' 
+}; 
+
+//Estimate the number of iteration in video playlists to use it in the "Append latest video result to top video" section
+var len = Object.keys(channelPosition).length; 
+var iterationNumber = len * videoResults;
+console.log(iterationNumber);  
+
+//Counter to know when the get.video has retrieved every video
+var counter = 0;
 
 $(document).ready(function(){
 
+    //Iterate to get every youtube channel
     $.each(channelPosition, function( channel, id_position ) {
         
+    //Get every youtube channel    
     $.get (
         "https://www.googleapis.com/youtube/v3/channels", {
             part: 'contentDetails',
@@ -46,7 +58,8 @@ $(document).ready(function(){
             var latestVideoOutput;
 
             $.each(data.items, function(i, item){
-                console.log(item)
+                
+                counter = counter + 1;
                 var videodescription = item.snippet.description;
                 var videodate = item.snippet.publishedAt;
                 var videoId = item.snippet.resourceId.videoId;
@@ -70,27 +83,33 @@ $(document).ready(function(){
                 });
 
                 //Find the latest video
-                if (videodate > latestVideo) {
+                if (videodate > latestVideoInfo.latestVideoDate) {
 
-                    latestVideo = videodate;
-                    latestVideoDescription = videodescription;
-                    latestVideoId = videoId;
-                    
+                    latestVideoInfo.latestVideoDate = videodate;
+                    latestVideoInfo.latestVideoDescription = videodescription;
+                    latestVideoInfo.latestVideoId = videoId; 
+
                 };
 
+                   
+                //Append latest video result to top video
+                if (counter == iterationNumber) {
+
+                    //Create the HMTL for latest video row
+                    var latestVideoOutput = '<div id="latest-top-video"><iframe src="//www.youtube.com/embed/'+latestVideoInfo.latestVideoId+'"></iframe></div>';                      
+                    
+                    $('#latest-video-iframe').append(latestVideoOutput);
+                    $('#latest-video-description').append(latestVideoInfo.latestVideoDescription);
+
+                }
+                
 
             })
+
         }
     );}
 
     });
-
-    //Create the HMTL for latest video row
-    var latestVideoOutput = '<div id="latest-top-video"><iframe src="//www.youtube.com/embed/'+latestVideoId+'"></iframe></div>';
-                    
-    //Append to results playlist
-    $('#latest-video-iframe').append(latestVideoOutput);
-    $('#latest-video-description').append(latestVideoDescription);
 
 });
 

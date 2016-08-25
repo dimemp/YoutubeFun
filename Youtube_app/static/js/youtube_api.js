@@ -1,7 +1,5 @@
 var channelPosition = {
-    'CrazyTsach': '#Crazy-Tsach-results',
-    'VibratorProductions': '#Vibrator-Productions-results',
-    'AstathiosPranksMain': '#Astathios-Pranks-results'
+    'CrazyTsach': '#Crazy-Tsach-results'
 };
 
 var videoResults = 4;
@@ -15,7 +13,6 @@ var latestVideoInfo = {
 //Estimate the number of iteration in video playlists to use it in the "Append latest video result to top video" section
 var len = Object.keys(channelPosition).length; 
 var iterationNumber = len * videoResults;
-console.log(iterationNumber);  
 
 //Counter to know when the get.video has retrieved every video
 var counter = 0;
@@ -63,16 +60,21 @@ $(document).ready(function(){
                 var videodescription = item.snippet.description;
                 var videodate = item.snippet.publishedAt;
                 var videoId = item.snippet.resourceId.videoId;
+
+                //Create an id so that mouseenter / mouseleave don't repeat and work as expected
+                var videopositionid = '#'+counter+'';
+                console.log(videopositionid );  
+
                 
                 //Create the HMTL for video rows
-                var output = '<div class="col-md-3 video-clip"><div class="video"><iframe src="//www.youtube.com/embed/'+videoId+'"></iframe></div><div class="video-content"><div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>'+videodate+'</span></div><div class="description">'+videodescription+'</div></div></div>';
+                var output = '<div class="col-md-3 video-clip" id="'+counter+'"><div class="video"><iframe src="//www.youtube.com/embed/'+videoId+'"></iframe></div><div class="video-content"><div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>'+videodate+'</span></div><div class="description">'+videodescription+'</div></div></div>';
 
                 $(id_position).append(output);
 
                 //Hide video description and date
                 $('.video-content').hide();
 
-                $('.video-clip').on('mouseenter',function(event) {
+                $(videopositionid).on('mouseenter',function(event) {
 
                     $(this).find('.video-content').slideToggle('slow');
 

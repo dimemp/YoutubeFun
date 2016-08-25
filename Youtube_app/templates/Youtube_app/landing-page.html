@@ -40,8 +40,8 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Βοήθεια <span class="sr-only"></span></a></li>
-                    <li class="active"><a href="#">Επικοινωνία <span class="sr-only"></span></a></li>
+                    <li class="active"><a href="#myModal" data-toggle="modal" data-target="#myModal">Τι είναι; <span class="sr-only"></span></a></li>
+                    <li class="active"><a href="mailto:dimit357@gmail.com?Subject=Youtube%20pranks%20site" target="_top">Επικοινωνία <span class="sr-only"></span></a></li>
                 </ul>
             </div>
         </div>
@@ -50,10 +50,10 @@
 
         <div class="row ">
             <div class="col-md-12">
-                <div class="col-md-6 col-md-offset-2" id="latest-video-iframe">
+                <div class="col-sm-9 col-md-6 col-md-offset-2" id="latest-video-iframe">
                     
                 </div>
-                <div class="col-md-3" id="latest-video-description">
+                <div class="col-sm-3" id="latest-video-description">
                     
                 </div>
             </div>
@@ -104,17 +104,30 @@
     <div class="container-fluid text-center footer">
         <div class="row">
             <div class="col-md-12">
-                    <p>© 2016 Youtube Greek Pranks</p>
+                    <p>© 2016 Youtube Greek Channels Pranks</p>
+                    <p>Απολαύστε υπεύθυνα</p>
             </div>
         </div>
     </div>
     
-   
+   <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Τι είναι;</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Μια σελίδα που δείχνει όλα τα τελευταία βίντεο απο τα κουρφαία κανάλια για φάρσες στην Ελλάδα. Αν έχετε να προτείνετε κάποια κανάλια χρησιμοποιήστε την επικοινωνία.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- jQuery included -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/youtube_api.js' %}"></script>
-    <script src="{% static 'js/landing.js' %}"></script>
   </body>
 </html>

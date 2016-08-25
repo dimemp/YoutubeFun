@@ -1,5 +1,7 @@
 var channelPosition = {
-    'CrazyTsach': '#Crazy-Tsach-results'
+    'CrazyTsach': '#Crazy-Tsach-results',
+    'VibratorProductions': '#Vibrator-Productions-results',
+    'AstathiosPranksMain': '#Astathios-Pranks-results'
 };
 
 var videoResults = 4;
@@ -58,16 +60,14 @@ $(document).ready(function(){
                 
                 counter = counter + 1;
                 var videodescription = item.snippet.description;
-                var videodate = item.snippet.publishedAt;
-                var videoId = item.snippet.resourceId.videoId;
+                var videodate = item.snippet.publishedAt.slice(0,-14);
+                var videoId = item.snippet.resourceId.videoId; 
 
                 //Create an id so that mouseenter / mouseleave don't repeat and work as expected
                 var videopositionid = '#'+counter+'';
-                console.log(videopositionid );  
-
                 
                 //Create the HMTL for video rows
-                var output = '<div class="col-md-3 video-clip" id="'+counter+'"><div class="video"><iframe src="//www.youtube.com/embed/'+videoId+'"></iframe></div><div class="video-content"><div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>'+videodate+'</span></div><div class="description">'+videodescription+'</div></div></div>';
+                var output = '<div class="col-xs-12 col-sm-6 col-md-3 video-clip" id="'+counter+'"><div class="video"><iframe src="//www.youtube.com/embed/'+videoId+'"></iframe></div><div class="video-content"><div class="time"><span class="post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>'+videodate+'</span></div><div class="description">'+videodescription+'</div></div></div>';
 
                 $(id_position).append(output);
 
@@ -99,9 +99,10 @@ $(document).ready(function(){
 
                     //Create the HMTL for latest video row
                     var latestVideoOutput = '<div id="latest-top-video"><iframe src="//www.youtube.com/embed/'+latestVideoInfo.latestVideoId+'"></iframe></div>';                      
+                    var latestVideoDateOutput = '<div id="latest-vid-time"><span id="latest-vid-post-date"><i class="fa fa-clock-o time-icon" aria-hidden="true"></i>'+latestVideoInfo.latestVideoDate+'</span></div>'
                     
                     $('#latest-video-iframe').append(latestVideoOutput);
-                    $('#latest-video-description').append(latestVideoInfo.latestVideoDescription);
+                    $('#latest-video-description').append(latestVideoDateOutput, latestVideoInfo.latestVideoDescription);
 
                 }
                 
